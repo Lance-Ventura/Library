@@ -64,12 +64,12 @@ Make sure the following tools and technologies are installed:
 
 ### User Endpoints
 1. **Register User**
-   - **Endpoint**: `POST /user/register`
+   - **Endpoint**: `https://127.0.0.1/library/public/user/register`
    - **Request Body**:
      ```json
      {
-       "username": "string",
-       "password": "string"
+       "username": "Lance Kenneth Ventura",
+       "password": "1111"
      }
      ```
    - **Response**:
@@ -77,35 +77,28 @@ Make sure the following tools and technologies are installed:
      - `fail`: Username already exists.
 
 2. **Login**
-   - **Endpoint**: `POST /user/login`
+   - **Endpoint**: `https://127.0.0.1/library/public/user/auth`
    - **Request Body**:
      ```json
      {
-       "username": "string",
-       "password": "string"
+       "username": "Lance Kenneth Ventura",
+       "password": "1111"
      }
      ```
    - **Response**:
      - `success`: Returns a JWT token.
      - `fail`: Invalid username or password.
 
-3. **Delete User**
-   - **Endpoint**: `DELETE /user/delete`
-   - **Headers**: `Authorization: Bearer <JWT>`
-   - **Response**:
-     - `success`: User deleted successfully.
-     - `fail`: Authorization failed.
-
 ---
 
 ### Book Endpoints
 1. **Add Book**
-   - **Endpoint**: `POST /book/add`
+   - **Endpoint**: `https://127.0.0.1/library/public/books`
    - **Headers**: `Authorization: Bearer <JWT>`
    - **Request Body**:
      ```json
      {
-       "title": "string"
+       "title": "System Integration II"
      }
      ```
    - **Response**:
@@ -113,13 +106,13 @@ Make sure the following tools and technologies are installed:
      - `fail`: Book already exists.
 
 2. **Update Book**
-   - **Endpoint**: `PUT /book/update`
+   - **Endpoint**: `https://127.0.0.1/library/public/books/update`
    - **Headers**: `Authorization: Bearer <JWT>`
    - **Request Body**:
      ```json
      {
-       "book_id": "integer",
-       "title": "string"
+       "book_id": "123",
+       "title": "SYSTEM INTEGRATION"
      }
      ```
    - **Response**:
@@ -127,12 +120,12 @@ Make sure the following tools and technologies are installed:
      - `fail`: Book not found.
 
 3. **Delete Book**
-   - **Endpoint**: `DELETE /book/remove`
+   - **Endpoint**: `https://127.0.0.1/library/public/books/delete/173`
    - **Headers**: `Authorization: Bearer <JWT>`
    - **Request Body**:
      ```json
      {
-       "book_id": "integer"
+       "book_id": "123"
      }
      ```
    - **Response**:
@@ -140,7 +133,7 @@ Make sure the following tools and technologies are installed:
      - `fail`: Book not found.
 
 4. **List Books**
-   - **Endpoint**: `GET /book/list`
+   - **Endpoint**: `https://127.0.0.1/library/public/books/get`
    - **Response**:
      - `success`: Returns a list of books.
 
@@ -148,12 +141,12 @@ Make sure the following tools and technologies are installed:
 
 ### Author Endpoints
 1. **Add Author**
-   - **Endpoint**: `POST /author/add`
+   - **Endpoint**: `https://127.0.0.1/library/public/authors`
    - **Headers**: `Authorization: Bearer <JWT>`
    - **Request Body**:
      ```json
      {
-       "name": "string"
+       "name": "Lance"
      }
      ```
    - **Response**:
@@ -161,13 +154,13 @@ Make sure the following tools and technologies are installed:
      - `fail`: Author already exists.
 
 2. **Update Author**
-   - **Endpoint**: `PUT /author/update`
+   - **Endpoint**: `https://127.0.0.1/library/public/authors/update/121`
    - **Headers**: `Authorization: Bearer <JWT>`
    - **Request Body**:
      ```json
      {
-       "author_id": "integer",
-       "name": "string"
+       "author_id": "12",
+       "name": "Lance Kenneth"
      }
      ```
    - **Response**:
@@ -175,12 +168,12 @@ Make sure the following tools and technologies are installed:
      - `fail`: Author not found.
 
 3. **Delete Author**
-   - **Endpoint**: `DELETE /author/remove`
+   - **Endpoint**: `https://127.0.0.1/library/public/authors/delete/121`
    - **Headers**: `Authorization: Bearer <JWT>`
    - **Request Body**:
      ```json
      {
-       "author_id": "integer"
+       "author_id": "12"
      }
      ```
    - **Response**:
@@ -188,7 +181,7 @@ Make sure the following tools and technologies are installed:
      - `fail`: Author not found.
 
 4. **List Authors**
-   - **Endpoint**: `GET /author/list`
+   - **Endpoint**: `https://127.0.0.1/library/public/authors/get`
    - **Response**:
      - `success`: Returns a list of authors.
 
@@ -196,28 +189,17 @@ Make sure the following tools and technologies are installed:
 
 ### Book-Author Relationship Endpoints
 1. **Add Relationship**
-   - **Endpoint**: `POST /relation/add`
+   - **Endpoint**: `https://127.0.0.1/library/public/books`
    - **Headers**: `Authorization: Bearer <JWT>`
    - **Request Body**:
      ```json
      {
-       "book_id": "integer",
-       "author_id": "integer"
+       "book_id": "123",
+       "author_id": "12"
      }
      ```
    - **Response**:
      - `success`: Relationship added.
      - `fail`: Book or author not found.
 
-2. **List Relationships**
-   - **Endpoint**: `GET /relation/list`
-   - **Response**:
-     - `success`: Returns all book-author relationships.
-
 ---
-
-## 🏁 Getting Started
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/library-management-api.git
