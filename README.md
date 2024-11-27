@@ -4,19 +4,44 @@ The **Library Management API** is a backend service designed to manage library s
 
 ---
 
-##  Features
-- **User Management**: Secure registration, login, and account management.
-- **Book Management**: Add, update, delete, and view books.
-- **Author Management**: Add, update, delete, and view authors.
-- **Book-Author Relationships**: Link books with authors and retrieve associations.
-- **Secure API**: Features JWT-based authentication and one-time tokens for sensitive operations.
+## Features Overview
+
+### 1. **Efficient User Management**
+   - **Registration & Authentication**: Secure sign-ups and log-ins for users.
+   - **Role-based Access**: Different levels of access based on user roles (admin, user, etc.).
+   - **Account Management**: Users can update and manage their personal account information.
+
+### 2. **Library Book Operations**
+   - **Add & Update Books**: Seamless book management with easy options to add, modify, or remove books from the library.
+   - **Detailed Book Information**: Store and retrieve comprehensive details such as title and book ID.
+
+### 3. **Author Management**
+   - **Author Profiles**: Create and manage author profiles including name, and linked books.
+   - **Track Author Contributions**: Keep a record of each author’s books in the library system.
+
+### 4. **Book-Author Connections**
+   - **Relationship Mapping**: Automatically link authors to their respective books in a clear, easy-to-understand format.
+   - **Manage Associations**: Easily add or remove book-author relationships as needed.
+
+### 5. **Secure API Endpoints**
+   - **Token Authentication**: Secure access to all API endpoints using JSON Web Tokens (JWT).
+   - **One-Time Use Tokens**: Added security for sensitive operations, ensuring tokens cannot be reused for malicious purposes.
 
 ---
 
-##  Security Features
-- **JWT Authentication**: Protects endpoints with secure tokens.
-- **One-Time Tokens**: Prevents replay attacks for critical operations.
-- **Input Validation**: Ensures data integrity with validation rules.
+## Robust Security Measures
+
+### **JWT Token Authentication**
+   - Every API request is secured using **JWT tokens**. These tokens ensure that only authenticated users can perform operations within the API.
+   - Protects user accounts, books, and author data from unauthorized access.
+
+### **One-Time Use Tokens for Critical Actions**
+   - For actions such as adding, updating, or deleting resources (users, books, authors), the system generates **one-time tokens** to prevent replay attacks.
+   - Tokens are valid only for a short duration or for a single operation, minimizing security risks.
+
+### **Data Integrity with Input Validation**
+   - **Strong Validation Rules**: Ensures all user input is thoroughly validated to prevent the insertion of invalid or malicious data.
+   - Checks for the presence of required fields, correct formats (e.g., email format, password strength), and unique values for critical fields (e.g., book title or author name).
 
 ---
 
